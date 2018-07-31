@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.love.lylph.mapper.RankMapper">
+  <resultMap id="BaseResultMap" type="com.love.lylph.pojo.Rank">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="rankname" jdbcType="VARCHAR" property="rankname" />
+    <result column="rank" jdbcType="INTEGER" property="rank" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, rankname, rank
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from rank
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from rank
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.love.lylph.pojo.Rank">
+    insert into rank (id, rankname, rank
+      )
+    values (#{id,jdbcType=INTEGER}, #{rankname,jdbcType=VARCHAR}, #{rank,jdbcType=INTEGER}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.love.lylph.pojo.Rank">
+    insert into rank
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="rankname != null">
+        rankname,
+      </if>
+      <if test="rank != null">
+        rank,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="rankname != null">
+        #{rankname,jdbcType=VARCHAR},
+      </if>
+      <if test="rank != null">
+        #{rank,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.love.lylph.pojo.Rank">
+    update rank
+    <set>
+      <if test="rankname != null">
+        rankname = #{rankname,jdbcType=VARCHAR},
+      </if>
+      <if test="rank != null">
+        rank = #{rank,jdbcType=INTEGER},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.love.lylph.pojo.Rank">
+    update rank
+    set rankname = #{rankname,jdbcType=VARCHAR},
+      rank = #{rank,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
