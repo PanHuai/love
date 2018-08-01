@@ -1,5 +1,7 @@
 package com.love.lylph.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonObject;
 import com.love.lylph.pojo.User;
 import com.love.lylph.response.ResponseInfo;
@@ -37,9 +39,11 @@ public class LoginController {
     /**
      * 登录
      */
-    @GetMapping("/login")
-    public ResponseInfo postLogin(@RequestBody(required = false) Map<String,Object> params, HttpServletRequest request){
+    @PostMapping("/login")
+    public ResponseInfo postLogin(@RequestBody(required = false) Map<String,Object> params, HttpServletRequest request) throws JsonProcessingException {
         JsonObject result = new JsonObject();
+        ObjectMapper mapper = new ObjectMapper();
+
         ResponseInfo responseInfo = new ResponseInfo();
         User user = userService.getUser((String) params.get("username"),(String) params.get("password"));
         if (user != null) {

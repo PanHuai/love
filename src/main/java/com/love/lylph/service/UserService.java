@@ -8,5 +8,5 @@ import com.love.lylph.pojo.User;
  */
 public interface UserService {
 
-    public User getUser(String name,String password);
+    public User getUser(String username,String password);
 }

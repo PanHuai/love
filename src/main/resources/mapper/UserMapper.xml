@@ -132,7 +132,7 @@
   </update>
     
     <select id="getUser" resultType="User">
-        select username ,password from user where name= #{username} and password = #{password}
+        select username ,password from user where username= #{username} and password = #{password}
     </select>
     
 </mapper>
