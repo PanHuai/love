@@ -30,4 +30,12 @@ public class MD5 {
         }
     }
 
+    public static void main(String[] args) {
+        for (int i = 0; i < 5; i++) {
+            String s = MD5.encodeMd5("1232");
+            System.out.println(s+",长度："+s.length());
+        }
+
+    }
+
 }
