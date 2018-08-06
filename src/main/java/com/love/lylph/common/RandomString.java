@@ -10,7 +10,7 @@ public class RandomString {
 
     private static final String msg = "qwertyuiopasdfghjklzxcvbnm1234567890QWERTYUIOPLKJHGFDSAZXCVBNM";
 
-    private static RandomString randomString = new RandomString();
+    private static final RandomString randomString = new RandomString();
 
     public static RandomString getRandomString() {
         return randomString;

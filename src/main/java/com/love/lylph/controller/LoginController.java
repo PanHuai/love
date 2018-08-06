@@ -6,8 +6,11 @@ import com.google.gson.JsonObject;
 import com.love.lylph.pojo.User;
 import com.love.lylph.response.ResponseInfo;
 import com.love.lylph.service.UserService;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.cache.annotation.CacheConfig;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +23,7 @@ import java.util.Map;
  * @data 2018/7/31 10:37
  */
 @RestController
+@CacheConfig(cacheNames = "login")
 public class LoginController {
 
     @Autowired
@@ -39,11 +43,13 @@ public class LoginController {
     /**
      * 登录
      */
+    @Cacheable
+    @ApiOperation(value="创建用户", notes="根据User对象创建用户")
+    @ApiImplicitParam(name = "params", value = "用户详细实体user", required = true, dataType = "Map")
     @PostMapping("/login")
     public ResponseInfo postLogin(@RequestBody(required = false) Map<String,Object> params, HttpServletRequest request) throws JsonProcessingException {
         JsonObject result = new JsonObject();
         ObjectMapper mapper = new ObjectMapper();
-
         ResponseInfo responseInfo = new ResponseInfo();
         User user = userService.getUser((String) params.get("username"),(String) params.get("password"));
         if (user != null) {

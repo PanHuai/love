@@ -1,6 +1,7 @@
 package com.love.lylph.common;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -35,14 +36,44 @@ public class JsonUtils {
     /**
      * 将对象转化为json字符串
      */
-    public String gsonToJson(Object o) {
+    public String toJson(Object o) {
         if (o == null) {
             return null;
         }
         return gson.toJson(o);
     }
 
-    public String jacksonToJson(Object o) {
+    /**
+     * 将json转化为对象
+     */
+    public <T> T fromJson(String json,Class<T> clazz){
+        if (json == null) {
+            return  null;
+        }
+        return gson.fromJson(json, clazz);
+    }
+
+    /**
+     * 将json转化为集合
+     */
+    public <T> Collection<T> fromJson(String json,Class<? extends Collection> collectionClazz,Class<T> clazz){
+        if(json == null){
+            return null;
+        }
+        try {
+            Collection<T> collection =  mapper.readValue(json, getCollectionType(collectionClazz,clazz));
+            return collection;
+        } catch (IOException e) {
+            logger.error(String.format("json=[%s]", json), e);
+        }
+        return null;
+    }
+
+    private static JavaType getCollectionType(Class<?> collectionClass, Class<?>... elementClasses) {
+        return mapper.getTypeFactory().constructParametricType(collectionClass, elementClasses);
+    }
+
+   /*     public String jacksonToJson(Object o) {
         if (o == null) {
             return null;
         }
@@ -54,9 +85,6 @@ public class JsonUtils {
         return null;
     }
 
-    /**
-     * 将json转化为对象
-     */
     public <T> T jacksonfromJson(String json,Class<T> clazz){
         if(json == null){
             return null;
@@ -67,35 +95,6 @@ public class JsonUtils {
             logger.error(String.format("json=[%s]", json), e);
         }
         return null;
-    }
-
-    public <T> T gsonfromJson(String json,Class<T> clazz){
-        if (json == null) {
-            return  null;
-        }
-        return gson.fromJson(json, clazz);
-    }
-
-    /**
-     * 将json转化为集合
-     */
-    public <T> Collection<T> fromJson(String json,Class<? extends Collection> collectionClazz,Class<T> clazz) {
-        return gson.fromJson(json,new TypeToken<Collection<T>>(){}.getType());
-    }
-
-
-    public static void main(String[] args) {
-
-        List<User> list = new ArrayList<>();
-        for (int i = 0; i < 5; i++) {
-            User user = new User();
-            user.setName("pan");
-            list.add(user);
-        }
-
-        System.out.println(json.gsonToJson(list));
-
-
-    }
+    }*/
 
 }

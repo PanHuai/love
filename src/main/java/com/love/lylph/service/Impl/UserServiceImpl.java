@@ -1,4 +1,4 @@
-package com.love.lylph.serviceImpl;
+package com.love.lylph.service.Impl;
 
 import com.love.lylph.mapper.UserMapper;
 import com.love.lylph.pojo.User;
