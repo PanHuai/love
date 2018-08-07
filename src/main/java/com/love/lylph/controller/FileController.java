@@ -27,10 +27,13 @@ import java.util.Map;
 public class FileController {
 
     /**
-     * 上传路径
+     * 上传 下载 路径
      */
     @Value("${upload.file.path}")
     private String uploadFilePath;
+
+    @Value("${upload.file.path}")
+    private String downloadFilePath;
 
     /**
      * 单文件上传
@@ -48,7 +51,7 @@ public class FileController {
                 //获取文件名 路径中的 \ 通常需要使用 \\ 如果是 / 就不需要使用转义   windows下是\,linux和unix下是/
             String fileName = RandomString.getRandomString().getMsg(5) + filePath.substring(filePath.lastIndexOf('\\') + 1);
             try {
-                UploadUtils.get().upload(fileName, file);
+                UploadUtils.get().upload(uploadFilePath,fileName, file);
             } catch (IOException e) {
                 response.setCode(500);
                 response.setMsg("文件上传出错："+e);
@@ -75,7 +78,7 @@ public class FileController {
                 if (!file.isEmpty()) {
                     String filePath = file.getOriginalFilename();
                     String fileName = RandomString.getRandomString().getMsg(5) + filePath.substring(filePath.lastIndexOf('\\') + 1);
-                    UploadUtils.get().upload(fileName, file);
+                    UploadUtils.get().upload(uploadFilePath, fileName, file);
                 }
             }
             response.setCode(200);
@@ -97,7 +100,7 @@ public class FileController {
         ResponseInfo responseInfo = new ResponseInfo();
         String fileName = (String) params.get("fileName");
         try {
-            UploadUtils.get().download(fileName,response);
+            UploadUtils.get().download(downloadFilePath,fileName,response);
         } catch (IOException e) {
             responseInfo.setCode(500);
             responseInfo.setMsg("文件下载发生错误:"+e);

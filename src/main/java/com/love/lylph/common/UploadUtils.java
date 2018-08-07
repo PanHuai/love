@@ -19,9 +19,6 @@ public class UploadUtils {
 
     private static final UploadUtils upLoad = new UploadUtils();
 
-    @Value("${upload.file.path}")
-    private String uploadFilePath;
-
     public static UploadUtils get() {
         return upLoad;
     }
@@ -29,7 +26,7 @@ public class UploadUtils {
     /**
      * 文件上传
      */
-    public void upload(String fileName, MultipartFile file) throws IOException {
+    public void upload(String uploadFilePath, String fileName, MultipartFile file) throws IOException {
         String path = String.format("%s/%s", uploadFilePath, DateUtils.getCurrentTime("yyyyMMddHHmmss") + fileName);
         File dir = new File(path);
         if (!dir.exists()) {
@@ -41,7 +38,7 @@ public class UploadUtils {
     /**
      * 文件下载
      */
-    public void download(String fileName, HttpServletResponse response) throws IOException {
+    public void download(String downloadFilePath, String fileName, HttpServletResponse response) throws IOException {
 
         if (StringUtils.isNotBlank(fileName)) {
             response.setHeader("content-type", "application/octet-stream");
@@ -51,7 +48,7 @@ public class UploadUtils {
             BufferedInputStream bs = null;
             OutputStream os = null;
             byte[] buffer = new byte[1024];
-            File file = new File(String.format("%s/%s", uploadFilePath, fileName));
+            File file = new File(String.format("%s/%s", downloadFilePath, fileName));
             try {
                 is = new FileInputStream(file);
                 bs = new BufferedInputStream(is);
