@@ -10,9 +10,9 @@ import org.springframework.stereotype.Component;
 @Component
 public class TestScheduler {
 
-    @Scheduled(cron = "1 * * * * ?")
+   /* @Scheduled(cron = "1 * * * * ?")
     public void test() {
         System.out.println("我爱你");
-    }
+    }*/
 
 }

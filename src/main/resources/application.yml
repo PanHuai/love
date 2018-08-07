@@ -69,6 +69,11 @@ spring:
         max-active: 8
         max-wait: 1
     timeout: 5000
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 20MB
+
 
 
 
@@ -86,8 +91,15 @@ server:
 
 
 logging:
-  path: C:/Users/sipaote/Desktop/logs
+  path: 'C:/Users/sipaote/Desktop/logs'
   pattern:
     console: '[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] -- method:%m%n'
     file: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n'
+
+upload:
+  file:
+    path: D:/myLove
+
+
+
 
