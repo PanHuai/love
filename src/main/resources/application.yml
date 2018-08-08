@@ -91,15 +91,15 @@ server:
 
 
 logging:
-  path: 'F:/logs'
+  path: C:\Users\sipaote\Desktop\logs
   pattern:
     console: '[%-5p] %d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] -- method:%m%n'
     file: '%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{50} - %msg%n'
 
 upload:
   file:
-    path: F:/myLove
-    download: F:/load
+    path: D:/myLove
+    download: D:/load
 
 
 

@@ -1,5 +1,6 @@
 package com.love.lylph.controller;
 
+import com.love.lylph.common.DateUtils;
 import com.love.lylph.common.RandomString;
 import com.love.lylph.common.UploadUtils;
 import com.love.lylph.response.ResponseInfo;
@@ -48,10 +49,8 @@ public class FileController {
 
             String filePath = file.getOriginalFilename();
 
-                //获取文件名 路径中的 \ 通常需要使用 \\ 如果是 / 就不需要使用转义   windows下是\,linux和unix下是/
-            String fileName = RandomString.getRandomString().getMsg(5) + filePath.substring(filePath.lastIndexOf('\\') + 1);
             try {
-                UploadUtils.get().upload(uploadFilePath,fileName, file);
+                UploadUtils.get().upload(uploadFilePath,filePath, file);
             } catch (IOException e) {
                 response.setCode(500);
                 response.setMsg("文件上传出错："+e);
@@ -77,8 +76,7 @@ public class FileController {
             for (MultipartFile file : files) {
                 if (!file.isEmpty()) {
                     String filePath = file.getOriginalFilename();
-                    String fileName = RandomString.getRandomString().getMsg(5) + filePath.substring(filePath.lastIndexOf('\\') + 1);
-                    UploadUtils.get().upload(uploadFilePath, fileName, file);
+                    UploadUtils.get().upload(uploadFilePath, filePath, file);
                 }
             }
             response.setCode(200);

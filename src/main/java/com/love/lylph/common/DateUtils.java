@@ -3,7 +3,9 @@ package com.love.lylph.common;
 import org.joda.time.DateTime;
 
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  * @author PanHuai
@@ -15,6 +17,22 @@ public class DateUtils {
     public final static String DATE_FORMAT_TIME = "yyyy-MM-dd HH:mm";
     public final static String DATE_FORMAT_ALL = "yyyy-MM-dd HH:mm:ss";
     public final static String DATE_CHINA_DEFAULT = "yyyy年MM月dd日";
+
+    /**
+     * 时间转换处理
+     */
+    public static String dateTime(String createTime) {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String msg = null;
+        createTime = createTime.trim();
+        if (createTime.substring(createTime.length() - 1).equalsIgnoreCase("m")) {
+            Date date = new Date(Date.parse(createTime));
+            msg = sdf.format(date);
+        }else{
+            msg = createTime.toString();
+        }
+        return msg;
+    }
 
     /**
      * 获取指定日期前后num天的日期

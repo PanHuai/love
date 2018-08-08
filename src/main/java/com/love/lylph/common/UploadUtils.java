@@ -26,13 +26,18 @@ public class UploadUtils {
     /**
      * 文件上传
      */
-    public void upload(String uploadFilePath, String fileName, MultipartFile file) throws IOException {
-        String path = String.format("%s/%s", uploadFilePath, DateUtils.getCurrentTime("yyyyMMddHHmmss") + fileName);
-        File dir = new File(path);
+    public void upload(String uploadFilePath, String filePath, MultipartFile file) throws IOException {
+
+        //获取文件名 路径中的 \ 通常需要使用 \\ 如果是 / 就不需要使用转义   windows下是\,linux和unix下是/
+        if (filePath.lastIndexOf(".") != -1) {
+            filePath = RandomString.getRandomString().getMsg(5) + filePath.substring(filePath.lastIndexOf("."));
+        }
+
+        File dir = new File(uploadFilePath); //父级目录
         if (!dir.exists()) {
             dir.mkdirs();
         }
-        file.transferTo(dir);
+        file.transferTo(new File(String.format("%s/%s%s", uploadFilePath, DateUtils.getCurrentTime("yyyy_MM_dd_HH_mm_ss_sss"), filePath)));
     }
 
     /**
