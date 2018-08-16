@@ -3,6 +3,7 @@ package com.love.lylph.controller;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonObject;
+import com.love.lylph.common.JsonUtils;
 import com.love.lylph.pojo.User;
 import com.love.lylph.response.ResponseInfo;
 import com.love.lylph.service.UserService;
@@ -11,8 +12,10 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -33,8 +36,19 @@ public class LoginController {
     /**
      * 发送验证码
      */
-
-
+    @PreAuthorize("hasAnyRole('user','admin','pass')")
+    @RequestMapping("/logins")
+    public ResponseInfo login() {
+        ResponseInfo responseInfo = new ResponseInfo();
+        responseInfo.setCode(200);
+        responseInfo.setMsg("成功");
+        User user = new User();
+        user.setName("ser");
+        JsonObject js = new JsonObject();
+        js.addProperty("user",JsonUtils.getJsonUtils().toJson(user));
+        responseInfo.setData(js.toString());
+        return responseInfo;
+    }
     /**
      * 图片验证
      */
@@ -44,6 +58,7 @@ public class LoginController {
      * 登录
      */
     @Cacheable
+    @PreAuthorize("hasAnyRole('user','admin','pass')")
     @ApiOperation(value="创建用户", notes="根据User对象创建用户")
     @ApiImplicitParam(name = "params", value = "用户详细实体user", required = true, dataType = "Map")
     @PostMapping("/login")

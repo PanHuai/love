@@ -1,10 +1,9 @@
 package com.love.lylph.controller;
 
-import com.love.lylph.common.DateUtils;
-import com.love.lylph.common.RandomString;
 import com.love.lylph.common.UploadUtils;
 import com.love.lylph.response.ResponseInfo;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -41,6 +40,7 @@ public class FileController {
      * 表单name = 'file'
      * @return
      */
+    @PreAuthorize("hasAnyRole('user','admin','pass')")
     @RequestMapping("/file/upload")
     public ResponseInfo upload(HttpServletRequest request, @RequestParam("file")MultipartFile file) {
 

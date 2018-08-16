@@ -1,4 +1,4 @@
-package com.love.lylph.common.configuration;
+package com.love.lylph.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;

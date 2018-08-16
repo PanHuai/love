@@ -1,14 +1,14 @@
 package com.love.lylph.common;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
+
 import java.security.MessageDigest;
-import java.time.LocalDateTime;
-import java.util.Date;
 
 /**
  * @author PanHuai
  * @data 2018/8/1 18:18
  */
-public class MD5 {
+public class MD5 implements PasswordEncoder {
 
     public final static String encodeMd5(String s) {
         char hexDigits[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9',
@@ -40,4 +40,13 @@ public class MD5 {
 
     }
 
+    @Override
+    public String encode(CharSequence charSequence) {
+        return encodeMd5(charSequence.toString());
+    }
+
+    @Override
+    public boolean matches(CharSequence charSequence, String s) {
+        return s.equals(charSequence.toString());
+    }
 }
