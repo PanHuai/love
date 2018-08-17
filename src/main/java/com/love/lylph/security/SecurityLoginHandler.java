@@ -24,9 +24,7 @@ public class SecurityLoginHandler implements AuthenticationSuccessHandler {
     @Override
     public void onAuthenticationSuccess(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Authentication authentication) throws IOException, ServletException {
 
-        logger.info("登录成功-----------");
         User user = (User) authentication.getPrincipal();
-
-
+        logger.info(user.getUsername()+"登录成功-----------");
     }
 }

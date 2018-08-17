@@ -21,16 +21,9 @@ public class User {
 
     private Integer rankId;
 
-    /**
-     * 示意值：ROLE_ADMIN
-     */
-    private String roleName;
+    private String rolename;
 
-    /**
-     * 是否启用
-     * @return
-     */
-    private boolean enable;
+    private Boolean enable;
 
     public Long getId() {
         return id;
@@ -104,19 +97,19 @@ public class User {
         this.rankId = rankId;
     }
 
-    public String getRoleName() {
-        return roleName;
+    public String getRolename() {
+        return rolename;
     }
 
-    public void setRoleName(String roleName) {
-        this.roleName = roleName;
+    public void setRolename(String rolename) {
+        this.rolename = rolename == null ? null : rolename.trim();
     }
 
-    public boolean isEnable() {
+    public Boolean getEnable() {
         return enable;
     }
 
-    public void setEnable(boolean enable) {
+    public void setEnable(Boolean enable) {
         this.enable = enable;
     }
 }

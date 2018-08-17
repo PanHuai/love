@@ -32,7 +32,7 @@ public class SecurityProvider implements AuthenticationProvider {
             throw new BadCredentialsException("密码错误");
         }
         Collection<? extends GrantedAuthority> authorities = user.getAuthorities();
-        return new UsernamePasswordAuthenticationToken(name,password,authorities);
+        return new UsernamePasswordAuthenticationToken(user,password,authorities);
     }
 
     @Override

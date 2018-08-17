@@ -1,0 +1,71 @@
+2018-08-16 16:28:17.864 [restartedMain] INFO  com.love.lylph.LylphApplication - Starting LylphApplication on sipaote-PC with PID 8328 (E:\IdeaWork\lylph\target\classes started by sipaote in E:\IdeaWork\lylph)
+2018-08-16 16:28:17.874 [restartedMain] INFO  com.love.lylph.LylphApplication - No active profile set, falling back to default profiles: default
+2018-08-16 16:28:24.887 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2018-08-16 16:28:24.908 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-16 16:28:24.908 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-16 16:28:24.912 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Program Files\Java\jdk1.8.0_181\jre\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;D:\Program Files\redis;D:\Program Files\nodejs\node_global;.]
+2018-08-16 16:28:25.058 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-16 16:28:26.049 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2018-08-16 16:28:26.664 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-16 16:28:27.117 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-08-16 16:28:27.145 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2018-08-16 16:30:53.259 [restartedMain] INFO  com.love.lylph.LylphApplication - Starting LylphApplication on sipaote-PC with PID 7536 (E:\IdeaWork\lylph\target\classes started by sipaote in E:\IdeaWork\lylph)
+2018-08-16 16:30:53.261 [restartedMain] INFO  com.love.lylph.LylphApplication - No active profile set, falling back to default profiles: default
+2018-08-16 16:30:55.910 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2018-08-16 16:30:55.922 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-16 16:30:55.922 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-16 16:30:55.934 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Program Files\Java\jdk1.8.0_181\jre\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;D:\Program Files\redis;D:\Program Files\nodejs\node_global;.]
+2018-08-16 16:30:56.164 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-16 16:30:56.871 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2018-08-16 16:30:57.436 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-16 16:30:57.708 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-08-16 16:30:57.729 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2018-08-16 16:32:20.445 [restartedMain] INFO  com.love.lylph.LylphApplication - Starting LylphApplication on sipaote-PC with PID 8892 (E:\IdeaWork\lylph\target\classes started by sipaote in E:\IdeaWork\lylph)
+2018-08-16 16:32:20.448 [restartedMain] INFO  com.love.lylph.LylphApplication - No active profile set, falling back to default profiles: default
+2018-08-16 16:32:23.594 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2018-08-16 16:32:23.609 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-16 16:32:23.609 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-16 16:32:23.614 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Program Files\Java\jdk1.8.0_181\jre\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;D:\Program Files\redis;D:\Program Files\nodejs\node_global;.]
+2018-08-16 16:32:23.709 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-16 16:32:24.454 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2018-08-16 16:32:24.918 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-16 16:32:26.052 [restartedMain] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2018-08-16 16:32:26.053 [restartedMain] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2018-08-16 16:32:27.399 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} closed
+2018-08-16 16:32:28.521 [restartedMain] INFO  org.apache.catalina.core.StandardService - Stopping service [Tomcat]
+2018-08-16 16:33:09.509 [restartedMain] INFO  com.love.lylph.LylphApplication - Starting LylphApplication on sipaote-PC with PID 8040 (E:\IdeaWork\lylph\target\classes started by sipaote in E:\IdeaWork\lylph)
+2018-08-16 16:33:09.511 [restartedMain] INFO  com.love.lylph.LylphApplication - No active profile set, falling back to default profiles: default
+2018-08-16 16:33:12.429 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2018-08-16 16:33:12.442 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-16 16:33:12.442 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-16 16:33:12.449 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Program Files\Java\jdk1.8.0_181\jre\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;D:\Program Files\redis;D:\Program Files\nodejs\node_global;.]
+2018-08-16 16:33:12.595 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-16 16:33:13.437 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2018-08-16 16:33:13.902 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-16 16:33:14.978 [restartedMain] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2018-08-16 16:33:14.980 [restartedMain] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2018-08-16 16:33:15.658 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-08-16 16:33:17.025 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2018-08-16 16:33:17.058 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2018-08-16 16:33:17.107 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2018-08-16 16:33:17.536 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2018-08-16 16:33:17.571 [restartedMain] INFO  com.love.lylph.LylphApplication - Started LylphApplication in 9.669 seconds (JVM running for 11.036)
+2018-08-16 16:38:03.599 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-08-16 16:40:34.088 [restartedMain] INFO  com.love.lylph.LylphApplication - Starting LylphApplication on sipaote-PC with PID 9124 (E:\IdeaWork\lylph\target\classes started by sipaote in E:\IdeaWork\lylph)
+2018-08-16 16:40:34.090 [restartedMain] INFO  com.love.lylph.LylphApplication - No active profile set, falling back to default profiles: default
+2018-08-16 16:40:39.029 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2018-08-16 16:40:39.054 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-08-16 16:40:39.054 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.32
+2018-08-16 16:40:39.059 [localhost-startStop-1] INFO  org.apache.catalina.core.AprLifecycleListener - The APR based Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: [C:\Program Files\Java\jdk1.8.0_181\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;D:\Program Files\Git\cmd;D:\Program Files\nodejs\;C:\Program Files\Java\jdk1.8.0_181\bin;C:\Program Files\Java\jdk1.8.0_181\jre\bin;C:\Program Files\MySQL\MySQL Utilities 1.6\;D:\Program Files\redis;D:\Program Files\nodejs\node_global;.]
+2018-08-16 16:40:39.195 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-08-16 16:40:40.260 [restartedMain] INFO  c.a.d.s.b.a.DruidDataSourceAutoConfigure - Init DruidDataSource
+2018-08-16 16:40:40.799 [restartedMain] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-08-16 16:40:42.105 [restartedMain] INFO  io.lettuce.core.EpollProvider - Starting without optional epoll library
+2018-08-16 16:40:42.107 [restartedMain] INFO  io.lettuce.core.KqueueProvider - Starting without optional kqueue library
+2018-08-16 16:40:42.958 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [public org.springframework.http.ResponseEntity<springfox.documentation.spring.web.json.Json> springfox.documentation.swagger2.web.Swagger2Controller.getDocumentation(java.lang.String,javax.servlet.http.HttpServletRequest)]
+2018-08-16 16:40:45.193 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2018-08-16 16:40:45.216 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2018-08-16 16:40:45.260 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2018-08-16 16:40:45.546 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2018-08-16 16:40:45.573 [restartedMain] INFO  com.love.lylph.LylphApplication - Started LylphApplication in 12.951 seconds (JVM running for 15.051)
+2018-08-16 16:41:01.588 [http-nio-8082-exec-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
