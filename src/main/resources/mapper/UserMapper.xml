@@ -11,15 +11,12 @@
     <result column="disabled" jdbcType="TINYINT" property="disabled" />
     <result column="depart_id" jdbcType="INTEGER" property="departId" />
     <result column="rank_id" jdbcType="INTEGER" property="rankId" />
-    <result column="roleName" jdbcType="VARCHAR" property="rolename" />
-    <result column="enable" jdbcType="BIT" property="enable" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, username, password, createtime, version, disabled, depart_id, rank_id,
-    roleName, enable
+    id, name, username, password, createtime, version, disabled, depart_id, rank_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select
+    select 
     <include refid="Base_Column_List" />
     from user
     where id = #{id,jdbcType=BIGINT}
@@ -29,14 +26,12 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.love.lylph.pojo.User" useGeneratedKeys="true">
-    insert into user (name, username, password,
-      createtime, version, disabled,
-      depart_id, rank_id, roleName,
-      enable)
-    values (#{name,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
-      #{createtime,jdbcType=TIMESTAMP}, #{version,jdbcType=VARCHAR}, #{disabled,jdbcType=TINYINT},
-      #{departId,jdbcType=INTEGER}, #{rankId,jdbcType=INTEGER}, #{rolename,jdbcType=VARCHAR},
-      #{enable,jdbcType=BIT})
+    insert into user (name, username, password, 
+      createtime, version, disabled, 
+      depart_id, rank_id)
+    values (#{name,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
+      #{createtime,jdbcType=TIMESTAMP}, #{version,jdbcType=VARCHAR}, #{disabled,jdbcType=TINYINT}, 
+      #{departId,jdbcType=INTEGER}, #{rankId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.love.lylph.pojo.User" useGeneratedKeys="true">
     insert into user
@@ -65,12 +60,6 @@
       <if test="rankId != null">
         rank_id,
       </if>
-      <if test="rolename != null">
-        roleName,
-      </if>
-      <if test="enable != null">
-        enable,
-      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="name != null">
@@ -96,12 +85,6 @@
       </if>
       <if test="rankId != null">
         #{rankId,jdbcType=INTEGER},
-      </if>
-      <if test="rolename != null">
-        #{rolename,jdbcType=VARCHAR},
-      </if>
-      <if test="enable != null">
-        #{enable,jdbcType=BIT},
       </if>
     </trim>
   </insert>
@@ -132,12 +115,6 @@
       <if test="rankId != null">
         rank_id = #{rankId,jdbcType=INTEGER},
       </if>
-      <if test="rolename != null">
-        roleName = #{rolename,jdbcType=VARCHAR},
-      </if>
-      <if test="enable != null">
-        enable = #{enable,jdbcType=BIT},
-      </if>
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
@@ -150,12 +127,12 @@
       version = #{version,jdbcType=VARCHAR},
       disabled = #{disabled,jdbcType=TINYINT},
       depart_id = #{departId,jdbcType=INTEGER},
-      rank_id = #{rankId,jdbcType=INTEGER},
-      roleName = #{rolename,jdbcType=VARCHAR},
-      enable = #{enable,jdbcType=BIT}
+      rank_id = #{rankId,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <select id="findUserByUserName" resultType="User">
-    select username,password,enable,rolename from user where username = #{username}
-  </select>
+    
+    <select id="getUser" resultType="User">
+        select username ,password from user where username= #{username} and password = #{password}
+    </select>
+    
 </mapper>

@@ -18,14 +18,14 @@ public class SecurityDto extends User implements UserDetails {
     public SecurityDto(User user) {
         this.setName(user.getUsername());
         this.setPassword(user.getPassword());
-        this.setEnable(user.getEnable());
-        this.setRolename(user.getRolename());
+        this.setEnable(user.isEnable());
+        this.setRoleName(user.getRoleName());
     }
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         Collection<GrantedAuthority> authorities = new HashSet<>();
-        authorities.add(new SimpleGrantedAuthority(this.getRolename()));
+        authorities.add(new SimpleGrantedAuthority(this.getRoleName()));
         return authorities;
     }
 
@@ -56,6 +56,6 @@ public class SecurityDto extends User implements UserDetails {
 
     @Override
     public boolean isEnabled() {
-        return super.getEnable();
+        return super.isEnable();
     }
 }
