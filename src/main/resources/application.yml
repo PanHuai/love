@@ -73,9 +73,10 @@ spring:
     multipart:
       max-file-size: 5MB
       max-request-size: 20MB
-
-
-
+  devtools:
+    restart:
+      enabled: true
+      additional-paths: src/main/java
 
 mybatis:
   configuration:

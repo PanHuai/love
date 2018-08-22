@@ -16,7 +16,7 @@
     id, name, username, password, createtime, version, disabled, depart_id, rank_id
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
-    select 
+    select
     <include refid="Base_Column_List" />
     from user
     where id = #{id,jdbcType=BIGINT}
@@ -26,11 +26,11 @@
     where id = #{id,jdbcType=BIGINT}
   </delete>
   <insert id="insert" keyColumn="id" keyProperty="id" parameterType="com.love.lylph.pojo.User" useGeneratedKeys="true">
-    insert into user (name, username, password, 
-      createtime, version, disabled, 
+    insert into user (name, username, password,
+      createtime, version, disabled,
       depart_id, rank_id)
-    values (#{name,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, 
-      #{createtime,jdbcType=TIMESTAMP}, #{version,jdbcType=VARCHAR}, #{disabled,jdbcType=TINYINT}, 
+    values (#{name,jdbcType=VARCHAR}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
+      #{createtime,jdbcType=TIMESTAMP}, #{version,jdbcType=VARCHAR}, #{disabled,jdbcType=TINYINT},
       #{departId,jdbcType=INTEGER}, #{rankId,jdbcType=INTEGER})
   </insert>
   <insert id="insertSelective" keyColumn="id" keyProperty="id" parameterType="com.love.lylph.pojo.User" useGeneratedKeys="true">
@@ -130,9 +130,12 @@
       rank_id = #{rankId,jdbcType=INTEGER}
     where id = #{id,jdbcType=BIGINT}
   </update>
-    
+
     <select id="getUser" resultType="User">
         select username ,password from user where username= #{username} and password = #{password}
     </select>
-    
+  <insert id="add" parameterType="User">
+    insert into user (username,password) values (#{username},#{password})
+  </insert>
+
 </mapper>

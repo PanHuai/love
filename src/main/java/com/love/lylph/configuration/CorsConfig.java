@@ -22,7 +22,7 @@ public class CorsConfig{
             CorsConfiguration corsConfiguration = new CorsConfiguration();
             corsConfiguration.addAllowedOrigin("*"); // 1
             corsConfiguration.addAllowedHeader("*"); // 2
-            corsConfiguration.addAllowedMethod("*"); // 3
+            corsConfiguration.addAllowedMethod("POST, GET, OPTIONS, DELETE"); // 3
             return corsConfiguration;
         }
 

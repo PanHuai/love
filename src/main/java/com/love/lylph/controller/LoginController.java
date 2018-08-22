@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -45,39 +46,43 @@ public class LoginController {
         User user = new User();
         user.setName("ser");
         JsonObject js = new JsonObject();
-        js.addProperty("user",JsonUtils.getJsonUtils().toJson(user));
+        js.addProperty("user", JsonUtils.getJsonUtils().toJson(user));
         responseInfo.setData(js.toString());
         return responseInfo;
     }
+
     /**
      * 图片验证
      */
-
+    @RequestMapping("/suu")
+    public String getss() {
+        return "suu";
+    }
 
     /**
      * 登录
      */
     @Cacheable
     @PreAuthorize("hasAnyRole('user','admin','pass')")
-    @ApiOperation(value="创建用户", notes="根据User对象创建用户")
+    @ApiOperation(value = "创建用户", notes = "根据User对象创建用户")
     @ApiImplicitParam(name = "params", value = "用户详细实体user", required = true, dataType = "Map")
     @PostMapping("/login")
-    public ResponseInfo postLogin(@RequestBody(required = false) Map<String,Object> params, HttpServletRequest request) throws JsonProcessingException {
+    public ResponseInfo postLogin(@RequestBody(required = false) Map<String, Object> params, HttpServletRequest request) throws JsonProcessingException {
         JsonObject result = new JsonObject();
         ObjectMapper mapper = new ObjectMapper();
         ResponseInfo responseInfo = new ResponseInfo();
-        User user = userService.getUser((String) params.get("username"),(String) params.get("password"));
+        User user = userService.getUser((String) params.get("username"), (String) params.get("password"));
         if (user != null) {
             responseInfo.setCode(200);
             responseInfo.setMsg("成功");
-            result.addProperty("username",user.getUsername());
-            result.addProperty("password",user.getPassword());
-        }else {
+            result.addProperty("username", user.getUsername());
+            result.addProperty("password", user.getPassword());
+        } else {
             responseInfo.setCode(201);
             responseInfo.setMsg("失败");
         }
         responseInfo.setData(result.toString());
-        return  responseInfo;
+        return responseInfo;
     }
 
     /**
@@ -91,4 +96,12 @@ public class LoginController {
     /**
      * 退出
      */
+    @RequestMapping("/add")
+    public Map<String, Object> add(@RequestBody User user) {
+        int add = userService.add(user);
+        User panhuai = userService.getUser("panhuai", "123");
+        System.out.println(add);
+        System.out.println(panhuai.toString());
+        return new HashMap<>();
+    }
 }

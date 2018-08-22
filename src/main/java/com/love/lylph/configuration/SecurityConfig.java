@@ -18,9 +18,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 /**
  * Created by 潘淮  on 2018/8/16.<br>
  */
-@Configuration
-@EnableWebSecurity
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     /**
@@ -35,17 +33,23 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     @Override
-    public AuthenticationManager authenticationManager() throws Exception {
+    protected AuthenticationManager authenticationManager() throws Exception {
         return super.authenticationManager();
     }
 
 
     @Override
-    public void configure(HttpSecurity http) throws Exception {
+    protected void configure(HttpSecurity http) throws Exception {
         /**
          * 任何人都能访问： /login  /logout
          */
-        http.csrf().disable()
+        http.authorizeRequests().antMatchers("/suu").permitAll() //都可以访问
+                .anyRequest().authenticated()   // 任何请求，登录后都可以访问
+                .and()
+                .logout().logoutUrl("/logput").permitAll();
+      //  http.formLogin().loginPage("/login").permitAll().and().authorizeRequests().anyRequest().authenticated();
+
+       /* http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/lizi", "/sss")
                 .permitAll()
@@ -65,11 +69,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .invalidateHttpSession(true)
                 .and()
                 .rememberMe()//登录后记住用户，下次自动登录,数据库中必须存在名为persistent_logins的表
-                .tokenValiditySeconds(86000);
+                .tokenValiditySeconds(86000);*/
     }
 
     @Override
-    public void configure(AuthenticationManagerBuilder auth) throws Exception {
+    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         auth.authenticationProvider(securityProvider).userDetailsService(securityService).passwordEncoder(passwordEncoder());
     }
 
