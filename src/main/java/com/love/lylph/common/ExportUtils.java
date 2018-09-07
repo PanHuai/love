@@ -1,9 +1,11 @@
 package com.love.lylph.common;
 
+import com.google.gson.JsonArray;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import com.love.lylph.pojo.User;
-import org.apache.poi.hssf.usermodel.HSSFCellStyle;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.hssf.util.HSSFColor;
 import org.apache.poi.poifs.filesystem.POIFSFileSystem;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -13,7 +15,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.BufferedOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
-import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -136,6 +137,49 @@ public class ExportUtils {
         if (wb != null) {
             wb.close();
         }
+    }
+
+    public static void main(String[] args) {
+        JsonArray a = new JsonArray();
+        JsonArray b = new JsonArray();
+
+        for (int i = 0; i < 10; i++) {
+            JsonObject c = new JsonObject();
+            c.addProperty(""+i,i);
+            if (i == 3 || i == 8) {
+                a.add(c);
+            } else {
+                b.add(c);
+            }
+        }
+        System.out.println(a);
+        System.out.println(b);
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < a.size() ; i++) {
+            JsonElement jsonElement = a.get(i);
+            if (i == a.size() - 1) {
+                sb.append(jsonElement.toString());
+            } else {
+                sb.append(jsonElement.toString() + ",");
+            }
+        }
+        for (int i = 0; i < b.size(); i++) {
+            if (i == 0) {
+                sb.append(",");
+            }
+            JsonElement jsonElement = b.get(i);
+            if (i == b.size() - 1) {
+                sb.append(jsonElement.toString());
+            } else {
+                sb.append(jsonElement.toString() + ",");
+            }
+        }
+        sb.insert(0, "[").append("]");
+        System.out.println(sb.toString());
+        JsonArray asJsonArray = new JsonParser().parse(sb.toString()).getAsJsonArray();
+        System.out.println(asJsonArray);
+
+
     }
 
 }

@@ -2,7 +2,9 @@ package com.love.lylph.common;
 
 import org.joda.time.DateTime;
 
+import java.math.BigDecimal;
 import java.sql.Timestamp;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -227,9 +229,5 @@ public class DateUtils {
             }
 
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println(getDay(System.currentTimeMillis(), -30));
     }
 }
